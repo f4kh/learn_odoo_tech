@@ -22,6 +22,7 @@ class ModelDoctor(models.Model):
         ("male","Male"),("female","Female")
         ], string="Gender")
     patient_ids = fields.One2many(comodel_name="learn.patient", inverse_name="doctor_id", string="Patients")
+    hospital_id = fields.Many2many(comodel_name="learn.hospital", relation="doctor_hospitals_rel", column1="doctor_id", column2="hospital_id", string="Hospitals")
     
     
 class ModelPatient(models.Model):
@@ -34,4 +35,12 @@ class ModelPatient(models.Model):
         [("male","Male"),("female","Female")], string="Gender")
     doctor_id = fields.Many2one(comodel_name="learn.doctor", string="Doctor")
     
+
+class ModelHospital(models.Model):
+    """ A doctor can work in multiple hospitals and a hospital can have multiple doctors"""
+    _name = "learn.hospital"
+    _description = "Hospital entity"
+    
+    name = fields.Char(string="Hospital name", required=True)
+    date_of_creation = fields.Date(sting="Creation date")
     
