@@ -7,7 +7,7 @@ class ModelDoctor(models.Model):
     _descripion = "Doctor entity"
     _sql_constraints = [
             ("uniq_fullname","UNIQUE (name)","Fullname must be unique"),
-            ("denied_fullname","CHECK (name != 'Fakhri Brahem')","Fakhri Brahem is not a teacher !")
+            ("denied_fullname","CHECK (name != 'AAA BBB')","Fakhri Brahem is not a teacher !")
                       ]
     
     name = fields.Char(string="Fullname", required=True, size=64, help="Doctor's fullname", default="Doctor Fullname")
