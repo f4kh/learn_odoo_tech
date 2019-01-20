@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+	<data>
+		
+		<record id="action_learn_hospital" model="ir.actions.act_window">
+	        <field name="name">Hospitals</field>
+	        <field name="type">ir.actions.act_window</field>
+	        <field name="res_model">learn.hospital</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="help" type="html">
+	          <p class="oe_view_nocontent_create">
+	            Click to add a hospital in your hospitals directory.
+	          </p>
+	        </field>
+	    </record>
+		
+		
+		<menuitem id="learn_hospital_menu" name="Hospital" sequence="3" parent="learn_principal_menu" /> 
+		<menuitem id="learn_hospital_submenu" name="Hospital Entity" sequence="1" parent="learn_hospital_menu" 
+				  action="action_learn_hospital" />
+	</data>
+</odoo>

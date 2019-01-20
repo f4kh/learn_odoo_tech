@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+	<data>
+	
+		<record id="action_learn_doctor" model="ir.actions.act_window">
+	        <field name="name">Doctors</field>
+	        <field name="type">ir.actions.act_window</field>
+	        <field name="res_model">learn.doctor</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="help" type="html">
+	          <p class="oe_view_nocontent_create">
+	            Click to add a doctor in your doctors directory.
+	          </p><p>
+	           :)
+	          </p>
+	        </field>
+	    </record>
+		
+		<menuitem id="learn_principal_menu" name="Principal" sequence="1" />
+		
+		<menuitem id="learn_doctor_menu" name="Doctor" sequence="1" parent="learn_principal_menu" /> 
+		<menuitem id="learn_doctor_submenu" name="Doctor Entity" sequence="1" parent="learn_doctor_menu" 
+				  action="action_learn_doctor" />
+				  
+
+	
+	</data>
+	
+</odoo>

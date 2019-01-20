@@ -13,7 +13,10 @@
     'author' : "p4k!s",
     'sequence': 2,
     'depends' : ['base'],
-    'data' : [],
-    'demo' : [],
+    'data' : [
+        'views/doctor_view.xml',
+        'views/patient_view.xml',
+        'views/hospital_view.xml',
+        ],
     'installable':True,
 }

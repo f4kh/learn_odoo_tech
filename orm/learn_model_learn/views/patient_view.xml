@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		
+		<record id="action_learn_patient" model="ir.actions.act_window">
+	        <field name="name">Patients</field>
+	        <field name="type">ir.actions.act_window</field>
+	        <field name="res_model">learn.patient</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="help" type="html">
+	          <p class="oe_view_nocontent_create">
+	            Click to add a patient in your patients directory.
+	          </p><p>
+	           :)
+	          </p>
+	        </field>
+	    </record>
+		
+		
+		<menuitem id="learn_patient_menu" name="Patient" sequence="2" parent="learn_principal_menu" /> 
+		<menuitem id="learn_patient_submenu" name="Patient Entity" sequence="1" parent="learn_patient_menu" 
+				  action="action_learn_patient" />
+	</data>
+</odoo>

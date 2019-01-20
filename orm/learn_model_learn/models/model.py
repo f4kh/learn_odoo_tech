@@ -12,6 +12,7 @@ class ModelDoctor(models.Model):
     
     name = fields.Char(string="Fullname", required=True, size=64, help="Doctor's fullname", default="Doctor Fullname")
     height = fields.Integer(string="height(cm)", default=None)
+    height_in_meter = fields.Char(string="height(m)", readonly=True)
     description = fields.Text(string="Description", help="job description")
     signature = fields.Html(string="Signature")
     date_of_birth = fields.Date(string="Date of birthday")
