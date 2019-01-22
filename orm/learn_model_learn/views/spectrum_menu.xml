@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+		
+		<record id="action_learn_spectrum" model="ir.actions.act_url">
+		  <field name="name">Spectrum Groupe Home</field>
+          <field name="target">new</field>
+          <field name="url">http://www.spectrumgroupe.fr/</field>	
+		</record>
+		
+		<menuitem id="learn_spectrum_menu" name="Spectrum Groupe" sequence="4" parent="learn_principal_menu" /> 
+		<menuitem id="learn_spectrum_submenu" name="Spectrum Groupe Home" sequence="1" parent="learn_spectrum_menu" 
+				  action="action_learn_spectrum" />
+</odoo>

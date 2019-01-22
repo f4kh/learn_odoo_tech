@@ -17,6 +17,7 @@
         'views/doctor_view.xml',
         'views/patient_view.xml',
         'views/hospital_view.xml',
+        'views/spectrum_menu.xml',
         ],
     'installable':True,
 }
