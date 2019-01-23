@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="0">
+		
+		<record id="dr_dexter" model="learn.doctor">
+			<field name="name">Dr.Dexter</field>
+			<field name="height">152</field>
+			<field name="description">great doctor </field>
+			<field name="signature">
+			<![CDATA[
+				<p> &copy; <em>Dr.Dexter</em> </p>
+			]]>
+			</field>
+			<field name="date_of_birth" eval="datetime(year=1975, month=10, day=20)" />
+			<field name="avatar" type="base64" file="learn_model_learn/static/img/dr/dexter.jpg" />
+			<field name="gender">male</field>
+		</record>
+		
+		<record id="dr_becha" model="learn.doctor">
+			<field name="name">Dr.Becha</field>
+			<field name="height">172</field>
+			<field name="description">becha doctor </field>
+			<field name="signature">
+			<![CDATA[
+				<p> &copy; <em>Dr.Becha</em> </p>
+			]]>
+			</field>
+			<field name="date_of_birth" eval="datetime(year=1985, month=10, day=22)" />
+			<field name="gender">male</field>
+			<field name="patient_ids" eval="[(6,0,[ref('kandia_traore')])]" />
+			<field name="hospital_id" eval="[(6,0,[ref('mongi_slim'),ref('sahloul')])]" />
+		</record>
+		
+	</data>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="0">
+	
+		<record id="habib_thameur" model="learn.hospital">
+			<field name="name">Hôpital Habib Thameur</field>
+			<field name="date_of_creation">1979-02-11</field>
+			<field name="still_active" eval="0" />
+			<field name="number_of_beds">1250</field>
+		</record>
+		
+		<record id="mongi_slim" model="learn.hospital">
+			<field name="name">Hôpital mongi slim</field>
+			<field name="date_of_creation" eval="datetime(year=1975, month=11, day=25)" />
+			<field name="still_active" eval="True" />
+			<field name="note_du_hopital" eval="12.3" />
+		</record>
+		
+		<record id="sahloul" model="learn.hospital">
+			<field name="name">Hôpital sahloul</field>
+			<field name="date_of_creation" eval="datetime(year=1975, month=11, day=25) - timedelta(days=500)" />
+			<field name="still_active" eval="1" />
+			<field name="hospital_presentation"> Sahloul a sousse </field>
+		</record> 
+		
+		<record id="aziza_othmana" model="learn.hospital">
+			<field name="name">Hôpital Aziza Othmana</field>
+			<field name="date_of_creation">1963-02-11</field>
+			<field name="still_active" eval="1" />
+			<field name="number_of_beds">3250</field>
+			<field name="note_du_hopital">13.75</field>
+			<field name="hospital_presentation">Aziza Othmana ou travaille 3am Ridha</field>
+			<field name="hospital_about">
+				<![CDATA[
+					<div class="oe_structure">
+					    <center><strong>the Hospital Days</strong></center>
+					    <p>&nbsp;</p>
+					    <p>Every year we invite our community, partners and end-users to come and meet us! It's the ideal event to get together , roadmap of future projects, achievements , workshops, training sessions, etc.... 
+					    </p>
+					    <p align="RIGHT"><em>(Aziza Othmana<br/>Hospital.)</em></p>
+					</div>
+				]]>
+			</field>
+			<field name="hospital_image" type="base64" file="learn_model_learn/static/img/hopital-aziza-othmana.jpg" />
+			<field name="hospital_pdf" type="base64" file="learn_model_learn/static/Chap5-organisation-de-hopital.pdf" />
+			<field name="hospital_wall">white</field>
+		</record>
+		
+		
+		
+	</data>
+</odoo>

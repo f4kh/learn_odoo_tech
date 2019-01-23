@@ -44,4 +44,15 @@ class ModelHospital(models.Model):
     
     name = fields.Char(string="Hospital name", required=True)
     date_of_creation = fields.Date(sting="Creation date")
+    still_active = fields.Boolean(string="Still active ?")
+    number_of_beds = fields.Integer(string="Number of beds")
+    note_du_hopital = fields.Float(string="Hospital grade", digits=(16,4))
+    hospital_presentation = fields.Text(string="Hospital presentation")
+    hospital_about = fields.Html(string="About")
+    hospital_image = fields.Binary(string="Image")
+    hospital_pdf = fields.Binary(string="Documentation")
+    hospital_wall = fields.Selection(
+        [("white","White"),("black","Black")],string="Wall color"
+        )
+    
     
