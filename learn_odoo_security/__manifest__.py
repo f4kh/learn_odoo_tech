@@ -14,6 +14,7 @@
     'sequence': 6,
     'depends' : ['base'],
     'data' : [
+        "security/learnOdooSecurity_security.xml"
         ],
     'installable':True,
 }

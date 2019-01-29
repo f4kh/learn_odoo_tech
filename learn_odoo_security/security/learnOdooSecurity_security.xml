@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="0">
+	
+	<!-- category for security group : will show our groups in a dropdown inside res.users form view in Access Rights tab.-->
+	<record id="module_learnOdooSecurity_security" model="ir.module.category">
+	    <field name="name">Security Module</field>
+	    <field name="description">will show learn_security_module category inside res.users form view in Access Rights tab.</field>	
+	    <field name="sequence">5</field>
+	</record>
+	
+	<!-- create user group -->
+	<record id="group_learnOdooSecurity_user" model="res.groups">
+		<field name="name">User</field>
+		<field name="comment">User group</field>
+		<field name="category_id" ref="module_learnOdooSecurity_security" />
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+		<!-- 
+		*implied_ids : inherited group privileges
+		*users of ths group (group_learnOdooSecurity_user) automatically inherits those groups 
+		*Users of this group automatically inherit those groups means when you assign this group to any user it automatically also access all the group given in this field implied_ids.
+		*[(4,ref('base.goup_user'))] : adds an existing record of id id to the set.
+		-->
+		<field name="users" eval="[(4, ref('base.user_root'))]" />
+		<!-- 
+		users are the group members which will get all the group privileges (res.users)
+		-->
+	</record>
+	
+	
+	</data>
+</odoo>
