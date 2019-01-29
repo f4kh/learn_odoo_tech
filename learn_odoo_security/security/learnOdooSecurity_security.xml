@@ -19,14 +19,21 @@
 		*implied_ids : inherited group privileges
 		*users of ths group (group_learnOdooSecurity_user) automatically inherits those groups 
 		*Users of this group automatically inherit those groups means when you assign this group to any user it automatically also access all the group given in this field implied_ids.
-		*[(4,ref('base.goup_user'))] : adds an existing record of id id to the set.
+		*[(4,ref('base.goup_user'))] : adds an existing records of ids [(4,ref('base.goup_user'))] to the set.
 		-->
+	</record>
+	
+	<!-- create manager group -->
+	<record id="group_learnOdooSecurity_manager" model="res.groups">
+		<field name="name">Manager</field>
+		<field name="comment">Manager group</field>
+		<field name="category_id" ref="module_learnOdooSecurity_security" />
+		<field name="implied_ids" eval="[(4, ref('group_learnOdooSecurity_user'))]"/>
 		<field name="users" eval="[(4, ref('base.user_root'))]" />
 		<!-- 
 		users are the group members which will get all the group privileges (res.users)
 		-->
 	</record>
-	
 	
 	</data>
 </odoo>

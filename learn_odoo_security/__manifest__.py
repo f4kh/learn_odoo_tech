@@ -14,7 +14,9 @@
     'sequence': 6,
     'depends' : ['base'],
     'data' : [
-        "security/learnOdooSecurity_security.xml"
+        "security/learnOdooSecurity_security.xml",
+        "security/ir.model.access.csv",
+        "views/student_view.xml",
         ],
     'installable':True,
 }
