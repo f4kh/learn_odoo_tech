@@ -2,6 +2,68 @@
 <odoo>
 	<data>
 		
+		
+	   <record id="action_learn_hospital_statistics" model="ir.actions.act_window">
+	        <field name="name">Statistics</field>
+	        <field name="type">ir.actions.act_window</field>
+	        <field name="res_model">learn.hospital</field>
+	        <field name="view_mode">graph</field>
+	        <field name="target">current</field>
+	        <field name="help" type="html">
+	          <p class="oe_view_nocontent_create">
+	            hospital Statistics...
+	          </p>
+	        </field>
+	    </record>
+		
+		<record id="learn_hospital_form_view" model="ir.ui.view">
+			<field name="name">learn.hospital.form</field>
+			<field name="model">learn.hospital</field>
+			<field name="arch" type="xml">
+				<form string="HosHospitTalHos">
+					<header>
+					</header>
+					<sheet>
+						<field name="hospital_image" widget="image" class="oe_avatar" />
+						<div class="oe_title">
+							<label for="name" class="oe_edit_only"/>						
+							<h1>
+								<field name="name" placeholder="For ex. Habib Thameur"/>
+							</h1>
+							<label for="date_of_creation" class="oe_edit_only"/>						
+							<h2>
+								<field name="date_of_creation" />
+							</h2>
+						</div>
+						<group string="Hospital Details" name="hosp1a">
+							<group><field name="still_active" /></group>
+							<group><field name="hospital_pdf" /></group>
+						</group>
+						<group name="hosp1b">
+							<field name="hospital_presentation" widget="html" placeholder="Hospital presentation .." />
+						</group>
+						<separator string="More Details"/>
+						<group col="6">
+							<field name="number_of_beds" colspan="2"/>
+							<field name="note_du_hopital" colspan="2"/>
+							<field name="hospital_wall" colspan="2"/>
+						</group>
+						<separator string="ABOUT"/>
+						<notebook>
+							<page string="About us" name="about_us">
+								<field name="hospital_about" />
+							</page>
+							<page string="Notes" name="notes">
+								<group>
+									<field name="note" nolabel="1" placeholder="If you have some notes , write them here ." />
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>				
+			</field>
+		</record>
+		
 		<record id="action_learn_hospital" model="ir.actions.act_window">
 	        <field name="name">Hospitals</field>
 	        <field name="type">ir.actions.act_window</field>
@@ -20,5 +82,7 @@
 		<menuitem id="learn_hospital_menu" name="Hospital" sequence="3" parent="learn_principal_menu" /> 
 		<menuitem id="learn_hospital_submenu" name="Hospital Entity" sequence="1" parent="learn_hospital_menu" 
 				  action="action_learn_hospital" />
+		<menuitem id="learn_hospital_submenu_submenu" name="Hospital Statistics" sequence="1" parent="learn_hospital_submenu" 
+				  action="action_learn_hospital_statistics" />
 	</data>
 </odoo>
