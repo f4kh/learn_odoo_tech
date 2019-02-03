@@ -55,5 +55,10 @@ class ModelHospital(models.Model):
         [("white","White"),("black","Black")],string="Wall color"
         )
     note = fields.Text(string="Notes")
-    
+    note2 = fields.Text(String="Notes2")
+    #(hospital_wall = white) AND ( ((note_du_hopital = 100) and (nbreOfBeds > 250)) OR ((stillactive = true) and (nbreOfBeds > 250)) )
+    #AND (hospital_wall = white) ( OR ((note_du_hopital = 100) and (nbreOfBeds > 250)) ((stillactive = true) and (nbreOfBeds > 250)) )
+    #AND (hospital_wall = white) OR (AND (note_du_hopital = 100) (nbreOfBeds > 250))(AND (stillactive = true) (nbreOfBeds > 250))
+    #AND (hospital_wall = white) OR AND (note_du_hopital = 100) (nbreOfBeds > 250) AND (stillactive = true) (nbreOfBeds > 250)
+    # ['&',(),'|','&',(),(),'&',(),()]
     

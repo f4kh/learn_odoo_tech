@@ -44,7 +44,7 @@
 						</group>
 						<separator string="More Details"/>
 						<group col="6">
-							<field name="number_of_beds" colspan="2"/>
+							<field name="number_of_beds" colspan="2" />
 							<field name="note_du_hopital" colspan="2"/>
 							<field name="hospital_wall" colspan="2"/>
 						</group>
@@ -56,6 +56,12 @@
 							<page string="Notes" name="notes">
 								<group>
 									<field name="note" nolabel="1" placeholder="If you have some notes , write them here ." />
+								</group>
+							</page>
+							<page string="Notes2" name="notes2">
+								<group>
+									<field name="note2" nolabel="1" placeholder=" (hospital_wall = white) AND ( ((note_du_hopital >= 5) and (nbreOfBeds >= 250)) OR ((stillactive = true) and (nbreOfBeds >= 250)) )" 
+										   attrs="{'required': ['&amp;',('hospital_wall','=','white'),'|','&amp;',('note_du_hopital','>=',5),('number_of_beds','>=',250),'&amp;',('still_active','=',True),('number_of_beds','>=',250)] }" /> 
 								</group>
 							</page>
 						</notebook>
